@@ -89,15 +89,16 @@ Some notes:
   - total_workout_minutes
  
 # Design Choices
-- Time standard: All grouping is done by UTC date to avoid ambiguity (this can in pratical use be converted more simply to the local time of the us4er).
+- Time standard: All grouping is done by UTC date to avoid ambiguity (this can in pratical use be converted more simply to the local time of the user).
 - Sleep attribution: Sleep is attributed to the UTC date of its start timestamp, not the end.
 - Workout attribution: Workouts are parsed as local (PDT/PST) and converted to UTC before grouping.
-- Libraries over manual math: Uses zoneinfo and dateutil instead of manually subtracting 7/8 hours, to avoid subtle DST bugs.
+- Libraries over manual math: Uses zoneinfo and dateutil instead of manually subtracting 7/8 hours, to avoid subtle DST bugs. Using dateutil over datetime so that the time zone can be parsed along with the date time, protected against possible corrupt data that has the wrong time zone)
 - JSON-friendly: Sets (like training_types) are converted to lists before writing to JSON.
+- Used Json python library due to its robust framework built to writing dicts to files with readable formatting
 
 # AI Usage
 - used for developing some of the tests, making sure to check the expected behavior (made it easier to have many large sets of data)
-- used for writing the regex for datetime parsing before switching to use dateutil parsing
+- used for writing the regex for datetime parsing before switching to use dateutil parsing (made sure to test it with edge cases
  
 # Usage
 
