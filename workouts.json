@@ -1,0 +1,67 @@
+{
+  "workouts": [
+    {
+      "id": 1,
+      "type": "Running",
+      "timestamp_local": "2023-09-30 23:30:00 PDT",
+      "duration_minutes": 45,
+      "calories_burned": 400
+    },
+    {
+      "id": 2,
+      "type": "Cycling",
+      "timestamp_local": "2023-10-01 18:00:00 PDT",
+      "duration_minutes": 60,
+      "calories_burned": 600
+    },
+    {
+      "id": 3,
+      "type": "HIIT",
+      "timestamp_local": "2023-10-01 23:30:00 PDT",
+      "duration_minutes": 30,
+      "calories_burned": 350
+    },
+    {
+      "id": 4,
+      "type": "Yoga",
+      "timestamp_local": "2023-10-03 05:30:00 PDT",
+      "duration_minutes": 40,
+      "calories_burned": 200
+    },
+    {
+      "id": 5,
+      "type": "Weights",
+      "timestamp_local": "2023-10-03 23:59:00 PDT",
+      "duration_minutes": 50,
+      "calories_burned": 420
+    },
+    {
+      "id": 6,
+      "type": "Cycling",
+      "timestamp_local": "2023-10-05 07:00:00 PDT",
+      "duration_minutes": 90,
+      "calories_burned": 750
+    },
+    {
+      "id": 7,
+      "type": "Running",
+      "timestamp_local": "2023-10-05 23:45:00 PDT",
+      "duration_minutes": 30,
+      "calories_burned": 320
+    },
+    {
+      "id": 8,
+      "type": "Swimming",
+      "timestamp_local": "2023-10-08 00:00:00 PDT",
+      "duration_minutes": 60,
+      "calories_burned": 500
+    },
+    {
+      "id": 9,
+      "type": "Cycling",
+      "timestamp_local": "2023-11-10 06:00:00 PST",
+      "duration_minutes": 70,
+      "calories_burned": 650
+    }
+  ]
+}
