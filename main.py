@@ -1,6 +1,5 @@
 from argparse import ArgumentParser
 from collections import defaultdict
-from datetime import datetime
 from dateutil import parser
 import json
 from zoneinfo import ZoneInfo
