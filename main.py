@@ -9,7 +9,6 @@ from zoneinfo import ZoneInfo
 HEALTHY_SLEEP_HOUR = 7
 HEALTH_ACTIVITY_MIN = 30
 
-USER_TZ = ZoneInfo("America/Los_Angeles")
 UTC = ZoneInfo("UTC")
 
 # Helper Functions
@@ -140,7 +139,6 @@ def activity_stat(merged):
             min_day = day
             min_cal = cal
     return max_day, max_cal, min_day, min_cal
-
 def is_healthy(day):
     sleep = day.get("total_sleep_hours", 0)
     activity_stat = day.get("total_calories", 0)
