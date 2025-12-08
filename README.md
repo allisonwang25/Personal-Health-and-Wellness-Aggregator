@@ -88,8 +88,22 @@ Some notes:
   - training_types (unique list)
   - total_workout_minutes
  
+# 3. Summary Metrics
+After merging the daily sleep and workout data, the script calculates simple correlation metrics to demonstrate that the merged data is usable for analysis. These currently include:
+
+## 3.1 Average calories burned on days with < 6 hours of sleep
+Shows whether low-sleep days tend to coincide with lower or higher workout intensity.
+
+## 3.2 Longest streak of “healthy days”
+A healthy day is defined as:
+- 7–9 hours of sleep, and
+- at least 30 minutes of workout activity.
+The script computes the longest run of consecutive UTC days that meet these criteria.
+
+These metrics verify that the normalization logic works correctly across timezone boundaries and that the merged dataset is ready for higher-level health analytics.
+ 
 # Design Choices
-- Time standard: All grouping is done by UTC date to avoid ambiguity (this can in pratical use be converted more simply to the local time of the user).
+- Time standard: All grouping is done by UTC date to avoid ambiguity (this can in practical use be converted more simply to the local time of the user, makes more sense to have a more standardized time like UTC in the official merged set).
 - Sleep attribution: Sleep is attributed to the UTC date of its start timestamp, not the end.
 - Workout attribution: Workouts are parsed as local (PDT/PST) and converted to UTC before grouping.
 - Libraries over manual math: Uses zoneinfo and dateutil instead of manually subtracting 7/8 hours, to avoid subtle DST bugs. Using dateutil over datetime so that the time zone can be parsed along with the date time, protected against possible corrupt data that has the wrong time zone)
