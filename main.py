@@ -78,12 +78,10 @@ def norm_activity_day(activity_data):
     return act_data_by_day
 def merge(sleep_by_day, act_by_day):
     if not sleep_by_day:
-        print("no sleep data")
         with open("merged.json", "w") as f:
             json.dump(act_by_day, f, indent=4)
         return act_by_day
     elif not act_by_day:
-        print("no activity data")
         with open("merged.json", "w") as f:
             json.dump(sleep_by_day, f, indent=4)
         return sleep_by_day
@@ -104,7 +102,6 @@ def merge(sleep_by_day, act_by_day):
 def norm_and_merge(sleep_data, activity_data):
     if activity_data:
         activity_data = activity_data.get("workouts", [])
-        print(f"Loaded {len(activity_data)} activity entries.")
     norm_sleep = norm_sleep_day(sleep_data) if sleep_data else {}
     norm_activity = norm_activity_day(activity_data) if activity_data else {}
     return merge(norm_sleep, norm_activity)
@@ -216,11 +213,8 @@ def main():
     args = parse_arguments()
     sleep = activity = None
     if args.sleep_data:
-        print(f"Sleep data file path: {args.sleep_data}")
         sleep = load_data(args.sleep_data)
-        print(f"Loaded {len(sleep)} sleep entries.")
     if args.activity_data:
-        print(f"Activity data file path: {args.activity_data}")
         activity = load_data(args.activity_data)
     
     merged = norm_and_merge(sleep, activity)
